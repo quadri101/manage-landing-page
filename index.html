@@ -19,17 +19,42 @@
   <body>
     <header class="primary-header">
       <div class="container">
-        <a href="#"><img src="images/logo.svg" alt="manage" /></a>
-        <nav aria-label="Primary" class="primary-navigation">
-          <ul role="list" class="nav-list">
-            <li class="nav-item"><a href="#">Pricing</a></li>
-            <li class="nav-item"><a href="#">Product</a></li>
-            <li class="nav-item"><a href="#">About Us</a></li>
-            <li class="nav-item"><a href="#">Careers</a></li>
-            <li class="nav-item"><a href="#">Community</a></li>
-          </ul>
-        </nav>
-        <button class="button">Get Started</button>
+        <div class="nav-wrapper">
+          <a href="#"><img src="images/logo.svg" alt="manage" /></a>
+          <button
+            class="mobile-nav-toggle"
+            aria-controls="primary-navigation"
+            aria-expanded="false"
+          >
+            <span class="visually-hidden">Menu</span>
+            <img
+              class="icon-hamburger"
+              src="./images/icon-hamburger.svg"
+              alt=""
+              aria-hidden="true"
+            />
+            <img
+              class="icon-close display-none"
+              src="./images/icon-close.svg"
+              alt=""
+              aria-hidden="true"
+            />
+          </button>
+          <nav
+            aria-label="Primary"
+            class="primary-navigation"
+            id="primary-navigation"
+          >
+            <ul role="list" class="nav-list">
+              <li class="nav-item"><a href="#">Pricing</a></li>
+              <li class="nav-item"><a href="#">Product</a></li>
+              <li class="nav-item"><a href="#">About Us</a></li>
+              <li class="nav-item"><a href="#">Careers</a></li>
+              <li class="nav-item"><a href="#">Community</a></li>
+            </ul>
+          </nav>
+          <!-- <button class="button">Get Started</button> -->
+        </div>
       </div>
     </header>
     <main>
