@@ -255,6 +255,11 @@ svg {
   border: 0 !important;
 }
 
+@media (min-width: 50em) {
+  .visible-md {
+    display: inline-flex;
+  }
+}
 /* general styling */
 body {
   font-size: var(--fs-body);
@@ -264,6 +269,7 @@ body {
 
 .button {
   cursor: pointer;
+  display: inline-flex;
   text-decoration: none;
   border: 0;
   border-radius: 100vmax;
@@ -300,7 +306,7 @@ body {
 
 /* navigation */
 .primary-header {
-  margin-top: var(--size-600);
+  padding-top: var(--size-600);
 }
 
 .nav-wrapper {
@@ -317,18 +323,51 @@ body {
   font-size: var(--fs-nav);
 }
 
+.nav-list {
+  display: flex;
+  font-weight: var(--fw-semi-bold);
+  gap: clamp(var(--size-400), 4vw, var(--size-700));
+}
+
+.nav-list a {
+  color: var(--clr-primary-400);
+  text-decoration: none;
+}
+
+.nav-list a:hover,
+.nav-list a:focus {
+  color: var(--clr-accent-400);
+  outline: 1px solid var(--clr-accent-500);
+  border-radius: var(--size-100);
+}
+
 @media (max-width: 50em) {
+  .hidden-sm {
+    display: none;
+  }
+
   .primary-navigation {
     display: none;
     position: absolute;
+    max-width: 25rem;
+    margin-inline: auto;
     background-color: var(--clr-neutral-100);
     inset: 7rem var(--size-400) auto;
     border-radius: var(--size-100);
     padding: var(--size-800) var(--size-600);
+    box-shadow: 0 0 0.75em rgb(0, 0, 0, 0.05);
+  }
+
+  .primary-header[data-overlay]::before {
+    content: "";
+    position: fixed;
+    inset: 0;
+    background-image: linear-gradient(rgb(0, 0, 0, 0), rgb(0, 0, 0, 0.5));
   }
 
   .primary-navigation[data-visible] {
     display: block;
+    position: fixed;
   }
 
   .nav-list {
@@ -338,23 +377,15 @@ body {
     font-weight: var(--fw-bold);
   }
 
-  .nav-list a {
-    text-decoration: none;
-    color: var(--clr-primary-400);
-  }
-
-  .nav-list a:hover,
-  .nav-list a:focus {
-    color: var(--clr-accent-400);
-    outline: 1px solid var(--clr-accent-500);
-    border-radius: var(--size-100);
-  }
-
   .mobile-nav-toggle {
+    position: fixed;
     display: block;
+    top: var(--size-500);
+    right: var(--size-400);
     cursor: pointer;
     background-color: transparent;
     border: none;
     padding: 0.5em;
+    z-index: 1000;
   }
 }

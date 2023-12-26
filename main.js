@@ -1,3 +1,4 @@
+const primaryHeader = document.querySelector(".primary-header");
 const navToggle = document.querySelector(".mobile-nav-toggle");
 const primaryNav = document.querySelector("#primary-navigation");
 
@@ -6,6 +7,7 @@ const navIconClose = document.querySelector(".icon-close");
 
 navToggle.addEventListener("click", () => {
   primaryNav.toggleAttribute("data-visible");
+  primaryHeader.toggleAttribute("data-overlay");
   if (primaryNav.hasAttribute("data-visible")) {
     navToggle.setAttribute("aria-expanded", true);
     navIconClose.classList.remove("display-none");
