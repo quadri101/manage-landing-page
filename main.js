@@ -18,3 +18,8 @@ navToggle.addEventListener("click", () => {
     navIconOpen.classList.remove("display-none");
   }
 });
+
+// Update Current year in the Footer
+
+const yearSpan = document.getElementById("current-year");
+yearSpan.textContent = new Date().getFullYear();
